@@ -1,0 +1,21 @@
+{
+  "character": "JARSAK",
+  "thai_name": "จาร์ศักดิ์",
+  "lock_version": "1.0",
+  "lock_method": "Use official reveal reference images as source of truth. Text prompt alone is not sufficient.",
+  "primary_references": [
+    "references/jarsak_face_lock_closeup.png",
+    "references/jarsak_master_portrait.png",
+    "references/jarsak_half_body_lock.png"
+  ],
+  "identity": {
+    "age": 35,
+    "role": "English Confidence Coach",
+    "default_wardrobe": "black knit shirt, dark smart casual, simple watch",
+    "face": "Thai male, oval face, warm natural skin tone, calm eyes, approachable smile",
+    "hair": "short natural black hair with soft texture and side volume"
+  },
+  "approval_rule": "Reject any output that does not match the face lock close-up and master portrait.",
+  "recommended_ai_reference_strength": "70-90% when the tool supports image reference strength.",
+  "training_note": "For near-100% repeatability in AI generation, train a LoRA or character model using the included references plus approved additional angles."
+}
