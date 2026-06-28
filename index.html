@@ -37,7 +37,7 @@
           </div>
         </div>
         <figure class="hero-portrait">
-          <img src="assets/images/jarsak-master-portrait.png" alt="JARSAK official master portrait">
+          <img class="zoomable" src="assets/images/jarsak-master-portrait.png" alt="JARSAK official master portrait">
           <figcaption>Locked identity reference v1.0</figcaption>
         </figure>
       </section>
@@ -94,19 +94,19 @@
         </div>
         <div class="asset-layout">
           <div class="face-lock">
-            <img src="assets/images/jarsak-face-lock.png" alt="JARSAK face lock close-up">
+            <img class="zoomable" src="assets/images/jarsak-face-lock.png" alt="JARSAK face lock close-up">
             <div>
               <h3>Primary Face Lock</h3>
               <p>ใช้ภาพนี้เป็น reference หลักทุกครั้งเมื่อสร้างภาพใหม่ ถ้าหน้าไม่ใกล้ภาพนี้ให้ถือว่าไม่ผ่าน character lock</p>
             </div>
           </div>
           <div class="reference-grid" aria-label="Reference images">
-            <img src="assets/images/jarsak-half-body.png" alt="JARSAK half body reference">
-            <img src="assets/images/jarsak-context.png" alt="JARSAK studio context reference">
-            <img src="assets/images/jarsak-expression-01.png" alt="JARSAK expression reference 1">
-            <img src="assets/images/jarsak-expression-02.png" alt="JARSAK expression reference 2">
-            <img src="assets/images/jarsak-expression-03.png" alt="JARSAK expression reference 3">
-            <img src="assets/images/jarsak-expression-04.png" alt="JARSAK expression reference 4">
+            <img class="zoomable" src="assets/images/jarsak-half-body.png" alt="JARSAK half body reference">
+            <img class="zoomable" src="assets/images/jarsak-context.png" alt="JARSAK studio context reference">
+            <img class="zoomable" src="assets/images/jarsak-expression-01.png" alt="JARSAK expression reference 1">
+            <img class="zoomable" src="assets/images/jarsak-expression-02.png" alt="JARSAK expression reference 2">
+            <img class="zoomable" src="assets/images/jarsak-expression-03.png" alt="JARSAK expression reference 3">
+            <img class="zoomable" src="assets/images/jarsak-expression-04.png" alt="JARSAK expression reference 4">
           </div>
         </div>
 
@@ -212,6 +212,12 @@
       <strong>JARSAK Character IP Hub</strong>
       <span>Ready for GitHub Pages</span>
     </footer>
+
+    <div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Full image preview">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+      <img id="lightboxImage" src="" alt="">
+      <p id="lightboxCaption"></p>
+    </div>
 
     <script src="script.js"></script>
   </body>
