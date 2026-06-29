@@ -1,37 +1,36 @@
 const masterPrompt = [
-  "Thai male English confidence coach named Jarsak, age 35, warm trustworthy face, approachable smile, short natural black hair with light texture, clean modern casual black knit shirt, minimal watch,",
-  "sitting or standing in a cozy modern learning studio with books, notebook, laptop, warm cinematic black and gold OpenDurian visual tone, natural realistic photography, confident but kind, helping learners speak English with courage,",
-  "premium education brand, soft warm key light, shallow depth of field."
+  "Original fictional Thai male English confidence coach named JARSAK v2, age 35-38, realistic human, warm sincere eyes,",
+  "thin rectangular stainless-steel eyeglasses with clear lenses, short neat black hair, black knit shirt, simple watch,",
+  "documentary editorial photography, real camera feel, natural skin texture, no AI gloss."
 ].join(" ");
 
 const negativePrompt = [
-  "Negative prompt: celebrity likeness, influencer look, cartoon mascot, luxury fashion model, aggressive teacher, overly formal corporate trainer, fantasy character, child, elderly man, messy classroom, neon cyberpunk,",
-  "exaggerated muscles, heavy beard, glasses as default, suit and tie as default, random logos, unreadable text."
+  "Negative prompt: celebrity likeness, AI gloss, plastic skin, perfect model face, thick black frames, sunglasses,",
+  "suit, tie, dark moody studio, heavy gold glow, text, logo, watermark, distorted hands."
 ].join(" ");
 
-const pose = document.querySelector("#pose");
-const expression = document.querySelector("#expression");
 const useCase = document.querySelector("#useCase");
+const locationSelect = document.querySelector("#location");
+const expression = document.querySelector("#expression");
 const output = document.querySelector("#promptOutput");
 const copyButton = document.querySelector("#copyPrompt");
 
 function buildPrompt() {
   return [
-    `${masterPrompt}`,
-    `Pose: ${pose.value}.`,
-    `Expression: ${expression.value}.`,
+    masterPrompt,
     `Use case: ${useCase.value}.`,
-    "Use jarsak-face-lock.png and jarsak-master-portrait.png as high-strength image references.",
+    `Location: ${locationSelect.value}.`,
+    `Expression: ${expression.value}.`,
+    "Brand phrase: แค่กล้าพูด ก็พูดได้.",
     negativePrompt
   ].join("\n\n");
 }
 
 function refreshPrompt() {
-  output.value = buildPrompt();
   output.textContent = buildPrompt();
 }
 
-[pose, expression, useCase].forEach((control) => {
+[useCase, locationSelect, expression].forEach((control) => {
   control.addEventListener("change", refreshPrompt);
 });
 
@@ -42,13 +41,11 @@ copyButton.addEventListener("click", async () => {
     copyButton.textContent = "Copied";
     setTimeout(() => {
       copyButton.textContent = "Copy Prompt";
-    }, 1400);
+    }, 1200);
   } catch {
-    output.focus();
+    output.textContent = `${prompt}\n\nCopy manually from this box.`;
   }
 });
-
-refreshPrompt();
 
 const lightbox = document.querySelector("#imageLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
@@ -84,13 +81,11 @@ document.querySelectorAll(".zoomable").forEach((image) => {
 
 lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (event) => {
-  if (event.target === lightbox) {
-    closeLightbox();
-  }
+  if (event.target === lightbox) closeLightbox();
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-    closeLightbox();
-  }
+  if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
 });
+
+refreshPrompt();

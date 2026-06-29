@@ -1,20 +1,15 @@
-# JARSAK Character IP Hub
+# JARSAK v2 Character IP System
 
-Static website for the JARSAK Character IP system.
+Static GitHub Pages-ready website for JARSAK v2.
 
-## Files
+## Included
 
-- `index.html` - main website
-- `styles.css` - responsive styling
-- `script.js` - prompt generator
-- `assets/images/` - locked character references
-- `assets/downloads/` - PDFs and prompt pack
-- `assets/data/` - structured character specs
+- `index.html` - website
+- `styles.css` - responsive design
+- `script.js` - prompt generator and image lightbox
+- `assets/images/` - master portrait and 3 location backgrounds
+- `assets/downloads/` - 10-page PDF and prompt/voice lock
 
 ## GitHub Pages
 
-1. Create a GitHub repository.
-2. Upload everything inside this `character-ip-site` folder.
-3. Open repository Settings > Pages.
-4. Set the source to the `main` branch and root folder.
-5. Open the generated GitHub Pages URL.
+Upload all files inside this folder to the repository root, then enable Pages from the `main` branch and `/root`.
