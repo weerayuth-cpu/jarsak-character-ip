@@ -240,6 +240,7 @@ h2 {
 
 .cards,
 .location-grid,
+.thumbnail-grid,
 .download-grid {
   display: grid;
   gap: 14px;
@@ -251,11 +252,13 @@ h2 {
 
 .cards article,
 .location-grid article,
+.thumbnail-grid article,
 .download-grid a,
 .voice-panel,
 .controls,
 .prompt-output,
-.voice-rules article {
+.voice-rules article,
+.thumbnail-rules article {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
@@ -303,6 +306,61 @@ h2 {
 .location-grid p {
   padding-bottom: 18px;
   color: var(--muted);
+}
+
+.thumbnails {
+  background: var(--white);
+}
+
+.thumbnail-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.thumbnail-grid article {
+  overflow: hidden;
+}
+
+.thumbnail-grid img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+.thumbnail-grid article div {
+  padding: 18px;
+}
+
+.thumbnail-grid span {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.thumbnail-grid p {
+  color: var(--muted);
+}
+
+.thumbnail-rules {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.thumbnail-rules article {
+  padding: 24px;
+}
+
+.thumbnail-rules ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.thumbnail-rules strong {
+  display: block;
+  margin-top: 14px;
+  color: var(--green);
+  font-size: 20px;
 }
 
 .voice {
@@ -473,6 +531,8 @@ select {
 
   .cards.four,
   .location-grid,
+  .thumbnail-grid,
+  .thumbnail-rules,
   .download-grid,
   .signal-strip {
     grid-template-columns: 1fr;
