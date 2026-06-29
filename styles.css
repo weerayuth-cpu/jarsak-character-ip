@@ -200,7 +200,7 @@ h2 {
 
 .signal-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-block: 1px solid var(--line);
   background: var(--white);
 }
@@ -241,7 +241,9 @@ h2 {
 .cards,
 .location-grid,
 .thumbnail-grid,
-.download-grid {
+.download-grid,
+.sample-grid,
+.usekit-grid {
   display: grid;
   gap: 14px;
 }
@@ -254,6 +256,8 @@ h2 {
 .location-grid article,
 .thumbnail-grid article,
 .download-grid a,
+.sample-grid article,
+.usekit-grid article,
 .voice-panel,
 .controls,
 .prompt-output,
@@ -331,6 +335,37 @@ h2 {
   padding: 18px;
 }
 
+.thumbnail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 0;
+}
+
+.thumbnail-actions a,
+.thumbnail-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.thumbnail-actions button {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
 .thumbnail-grid span {
   color: var(--gold);
   font-weight: 700;
@@ -401,6 +436,46 @@ h2 {
 .voice-rules ul {
   margin: 0;
   padding-left: 22px;
+}
+
+.sample-grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 16px;
+}
+
+.sample-grid article {
+  padding: 22px;
+  background: #211e18;
+  border-color: #3b3328;
+}
+
+.sample-grid span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--wood);
+  font-weight: 700;
+}
+
+.sample-grid p {
+  color: #efe5d6;
+}
+
+.use-kit {
+  background: #fbf8f1;
+}
+
+.usekit-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.usekit-grid article {
+  min-height: 210px;
+  padding: 24px;
+}
+
+.usekit-grid span {
+  color: var(--gold);
+  font-weight: 700;
 }
 
 .download-grid {
@@ -534,6 +609,8 @@ select {
   .thumbnail-grid,
   .thumbnail-rules,
   .download-grid,
+  .sample-grid,
+  .usekit-grid,
   .signal-strip {
     grid-template-columns: 1fr;
   }

@@ -47,6 +47,25 @@ copyButton.addEventListener("click", async () => {
   }
 });
 
+document.querySelectorAll(".copy-thumb").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const prompt = button.dataset.prompt || "";
+    const originalText = button.textContent;
+    try {
+      await navigator.clipboard.writeText(prompt);
+      button.textContent = "Copied";
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 1200);
+    } catch {
+      button.textContent = "Copy manually";
+      setTimeout(() => {
+        button.textContent = originalText;
+      }, 1600);
+    }
+  });
+});
+
 const lightbox = document.querySelector("#imageLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const lightboxCaption = document.querySelector("#lightboxCaption");
