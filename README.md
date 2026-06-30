@@ -8,7 +8,9 @@
 - `styles.css` - responsive styling
 - `script.js` - copy prompt และ image preview
 - `assets/images/shots/` - ภาพ photorealistic แยก 6 ท่า
+- `assets/images/green-screen/` - ภาพฉากเขียวแยก 6 ท่าสำหรับตัดต่อ
 - `assets/downloads/opendurian-english-photoreal-shots.zip` - ไฟล์รวมภาพทั้งหมด
+- `assets/downloads/opendurian-english-green-screen-shots.zip` - ไฟล์รวมภาพฉากเขียว
 
 ## GitHub Pages
 
