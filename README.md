@@ -1,23 +1,15 @@
-# OpenDurian English TikTok Character IP
+﻿# OpenDurian English Character IP 2026 - GitHub Lite
 
-โปรเจค static website สำหรับอัปขึ้น GitHub Pages ใช้เป็นหน้าแสดงชุดภาพอ้างอิงตัวละครครูสอนภาษาอังกฤษของ OpenDurian English
+เวอร์ชันนี้ตัดไฟล์ ZIP ดาวน์โหลดออกทั้งหมด เพื่อให้อัปโหลดผ่านหน้าเว็บ GitHub ได้ง่ายขึ้น
 
-## Included
+ให้อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์นี้ขึ้น GitHub repo root:
 
-- `index.html` - หน้าเว็บหลัก
-- `styles.css` - responsive styling
-- `script.js` - copy prompt และ image preview
-- `assets/images/shots/` - ภาพ photorealistic แยก 6 ท่า
-- `assets/images/green-screen/` - ภาพฉากเขียวแยก 6 ท่าสำหรับตัดต่อ
-- `assets/downloads/opendurian-english-photoreal-shots.zip` - ไฟล์รวมภาพทั้งหมด
-- `assets/downloads/opendurian-english-green-screen-shots.zip` - ไฟล์รวมภาพฉากเขียว
+- index.html
+- styles.css
+- script.js
+- README.md
+- PROMPTS.md
+- .nojekyll
+- assets/ ทั้งโฟลเดอร์
 
-## GitHub Pages
-
-1. อัปโหลดไฟล์ทั้งหมดในโฟลเดอร์นี้ไปที่ repository เดิม
-2. ถ้าใช้ GitHub Pages ให้ตั้งค่า Source เป็น branch `main` และ folder `/root`
-3. เปิด `index.html` เพื่อตรวจหน้าเว็บก่อน publish
-
-## Character Lock
-
-ใช้เป็นภาพคนจริงให้มากที่สุด หลีกเลี่ยง cartoon, anime, 3D render, mascot, doll-like skin และ illustration ทุกแบบ
+ห้ามอัปโหลด ZIP ใหญ่ เช่น github-ready.zip หรือ all-character-images-20.zip

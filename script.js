@@ -1,22 +1,33 @@
-const promptText = document.querySelector("#promptText");
-const copyPrompt = document.querySelector("#copyPrompt");
+const tabs = document.querySelectorAll(".tab");
+const cards = document.querySelectorAll(".asset-card");
 const lightbox = document.querySelector("#lightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const lightboxClose = document.querySelector(".lightbox-close");
 
-copyPrompt.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(promptText.textContent.trim());
-    copyPrompt.textContent = "Copied";
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const filter = tab.dataset.filter;
+    tabs.forEach((item) => item.classList.toggle("is-active", item === tab));
+    cards.forEach((card) => {
+      card.classList.toggle("is-hidden", card.dataset.group !== filter);
+    });
+  });
+});
+
+document.querySelectorAll(".copy-prompt").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const text = button.parentElement.querySelector("pre").textContent.trim();
+    const original = button.textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Copy manually";
+    }
     setTimeout(() => {
-      copyPrompt.textContent = "Copy Prompt";
-    }, 1200);
-  } catch {
-    copyPrompt.textContent = "Copy manually";
-    setTimeout(() => {
-      copyPrompt.textContent = "Copy Prompt";
-    }, 1600);
-  }
+      button.textContent = original;
+    }, 1300);
+  });
 });
 
 function openLightbox(image) {
@@ -44,7 +55,5 @@ lightbox.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-    closeLightbox();
-  }
+  if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
 });
